@@ -1,3 +1,11 @@
 <p>
-  hello works!
+  {{greeting}}
 </p>
+<b *ngIf="!greeting; else showGreeting">Enter a greeting</b>
+
+<ng-template #showGreeting>
+  <p>You added a greeting</p>
+</ng-template>
+
+<button (click)="sayHello()">Click me</button>
+<input type="text" [value]="greeting" (keyup)="updateGreeting($event)">
